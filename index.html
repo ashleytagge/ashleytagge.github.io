@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniel Zappala — Portfolio</title>
+  <title>Hi, I'm Ashley</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand-h: 262;
-      --brand-s: 75%;
-      --brand-l: 55%;
+      --brand-h: 210;
+      --brand-s: 80%;
+      --brand-l: 50%;
       --accent: hsl(var(--brand-h) var(--brand-s) var(--brand-l));
       --accent-2: hsl(calc(var(--brand-h) - 40) 80% 54%);
       --bg: #ffffff;
@@ -27,23 +27,10 @@
       --fast: 160ms;  --normal: 280ms;
       --header: 72px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1116;
-        --bg-soft: #141720;
-        --card: #121521;
-        --text: #eef0f7;
-        --muted: #b7b9c7;
-        --link: hsl(210 100% 74%);
-        --border: #1d2030;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-      }
-    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0; color: var(--text); background: radial-gradient(1200px 800px at 10% -10%, color-mix(in oklab, var(--accent) 15%, transparent), transparent),
-      radial-gradient(900px 600px at 110% 10%, color-mix(in oklab, var(--accent-2) 12%, transparent), transparent), var(--bg);
+      margin: 0; color: var(--text); background: var(--bg);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.65; letter-spacing: 0.01em;
     }
@@ -53,7 +40,7 @@
     header {
       position: sticky; top: 0; z-index: 10; height: var(--header);
       backdrop-filter: saturate(140%) blur(10px);
-      background: color-mix(in oklab, var(--bg) 75%, transparent);
+      background: color-mix(in oklab, var(--bg) 90%, transparent);
       border-bottom: 1px solid var(--border);
     }
     .head { display: flex; align-items: center; height: var(--header); gap: var(--sp-4); }
@@ -67,7 +54,7 @@
       border: 1px solid transparent; border-radius: 999px; text-decoration: none;
       transition: transform var(--fast) ease, background var(--fast) ease, border-color var(--fast) ease, box-shadow var(--fast) ease;
     }
-    .nav a:hover { background: color-mix(in oklab, var(--accent) 16%, var(--bg-soft)); color: #fff; box-shadow: var(--shadow); transform: translateY(-1px); border-color: transparent; }
+    .nav a:hover { background: var(--accent); color: #fff; box-shadow: var(--shadow); transform: translateY(-1px); border-color: transparent; }
     #about { padding: var(--sp-7) 0 var(--sp-6); text-align: center; }
     #about h1 { font-size: var(--fs-xxl); line-height: 1.1; margin: 0 0 var(--sp-3); letter-spacing: -0.02em; }
     #about p { font-size: clamp(1.05rem, 1.6vw, 1.35rem); color: var(--muted); margin: 0 0 var(--sp-4); }
@@ -95,46 +82,34 @@
     .card {
       border-radius: var(--r-xl);
       padding: var(--sp-4) var(--sp-4);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, transparent), var(--card));
+      background: var(--card);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       transition: transform var(--normal) ease, box-shadow var(--normal) ease, border-color var(--normal) ease;
     }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); border-color: color-mix(in oklab, var(--accent) 25%, var(--border)); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); border-color: var(--accent); }
     h3 { font-size: var(--fs-lg); font-weight: 700; margin: 0 0 var(--sp-2); color: var(--text); }
     p { font-size: var(--fs-sm); color: var(--muted); margin: 0 0 var(--sp-3); }
     .projects-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: var(--sp-4); }
-    .project { display: grid; grid-template-columns: 1fr; gap: var(--sp-3); }
-    .project .thumb { aspect-ratio: 16/10; overflow: hidden; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--bg-soft); }
-    .project img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--normal) ease; }
-    .project .thumb:hover img { transform: scale(1.03); }
     .cta-link { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; font-weight: 600; font-size: var(--fs-sm); }
-    .cta-link:hover { border-color: color-mix(in oklab, var(--accent) 40%, var(--border)); background: color-mix(in oklab, var(--accent) 12%, var(--bg-soft)); text-decoration: none; }
-    .flex-container { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
-    .flex-container img { width: 100%; height: auto; border-radius: var(--r-lg); border: 1px solid var(--border); }
+    .cta-link:hover { border-color: var(--accent); background: color-mix(in oklab, var(--accent) 12%, var(--bg-soft)); text-decoration: none; }
     .two-col { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--sp-4); align-items: start; }
     .job .role { font-size: var(--fs-md); font-weight: 600; color: var(--text); }
     .timeline { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; color: var(--muted); }
     #contact { text-align: center; }
     #contact p { font-size: var(--fs-lg); color: var(--text); }
     footer { padding: var(--sp-6) 0 var(--sp-6); border-top: 1px solid var(--border); margin-top: var(--sp-6); }
-    .social { display: flex; justify-content: center; gap: var(--sp-3); margin-bottom: var(--sp-3); }
-    .social a { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); background: var(--card); transition: transform var(--fast) ease, background var(--fast) ease, border-color var(--fast) ease; color: var(--text); }
-    .social a:hover { transform: translateY(-2px); background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: white; border-color: transparent; text-decoration: none; }
-    .social svg { width: 22px; height: 22px; fill: currentColor; }
     .muted { color: var(--muted); }
     @media (max-width: 860px) { .projects-grid, .two-col { grid-template-columns: 1fr; } #about { padding: var(--sp-6) 0 var(--sp-5); } }
-    @media (max-width: 560px) { :root { --fs-xxl: clamp(1.9rem, 9vw, 3rem); } .flex-container { grid-template-columns: 1fr; } .nav a { padding: 8px 12px; } }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
   <header>
     <div class="container head">
-      <div class="logo"><a href="#">Daniel Zappala</a></div>
+      <div class="logo"><a href="#">BYU CS HCI Portfolio</a></div>
       <nav>
         <div class="nav">
-          <a href="#projects">Recent Projects</a>
+          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
@@ -144,36 +119,26 @@
   <main>
     <section id="about">
       <div class="container">
-        <h1>Hi, I'm Daniel.</h1>
-        <p>Professor of Computer Science at BYU. I lead the <a href="https://uslab.byu.edu/">Usable Security and Privacy Lab</a>.</p>
-        <a class="download-btn" href="/Daniel_Zappala_Resume.pdf" download>Download Resume</a>
+        <h1>Hi, I'm a BYU Computer Science Student.</h1>
+        <p>I'm an undergraduate student at Brigham Young University focusing on Human–Computer Interaction (HCI). I love designing and building interactive systems that make technology more usable and delightful for people.</p>
+        <a class="download-btn" href="/BYU_HCI_Resume.pdf" download>Download Resume</a>
       </div>
     </section>
     <section id="projects">
       <div class="container">
-        <h2 class="section-title">Recent Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-          <article class="card project">
-            <div>
-              <h3>Human-centered Threat Modeling</h3>
-              <p>Human-centered threat modeling identifies security and privacy threats to people and mitigation strategies. Our work systematizes this practice and applies it to study Pakistani immigrants to the U.S.</p>
-            </div>
-            <div class="flex-container">
-              <a class="thumb" href="https://ieeexplore.ieee.org/document/11023352"><img src="/images/sok-page1.png" alt="SoK paper thumbnail"></a>
-              <a class="thumb" href="https://ieeexplore.ieee.org/document/11023485"><img src="/images/immigrants-page1.png" alt="Immigrants paper thumbnail"></a>
-            </div>
+          <article class="card">
+            <h3>Campus Navigation App</h3>
+            <p>Designed and developed an interactive mobile prototype to help new BYU students navigate campus buildings. Conducted usability testing with 12 participants and achieved a 40% reduction in task completion time.</p>
           </article>
-          <article class="card project">
-            <div>
-              <h3>Motivation to use secure email</h3>
-              <p>Interview study exploring mindsets behind adoption of secure email (e.g., ProtonMail). We found privacy motivations are strong, but encrypted email use remains rare—pointing to ecosystem and usability barriers. <a class="cta-link" href="https://www.usenix.org/conference/soups2023/presentation/usman">Read the paper ↗</a></p>
-            </div>
+          <article class="card">
+            <h3>Inclusive Design for Study Tools</h3>
+            <p>Created accessible study software for neurodiverse students using Figma and React. Focused on adaptable color schemes and simplified layouts to reduce cognitive load.</p>
           </article>
-          <article class="card project">
-            <div>
-              <h3>Automated Certificates for User Authentication</h3>
-              <p>Let’s Authenticate enables passwordless, certificate-backed logins while preserving privacy and reducing third-party trust. <a class="cta-link" href="https://www.ndss-symposium.org/ndss-paper/auto-draft-251/">Read the paper ↗</a></p>
-            </div>
+          <article class="card">
+            <h3>Usability Evaluation of Learning Interfaces</h3>
+            <p>Collaborated with peers in the Usable Security & Privacy Lab to evaluate online learning tools. Applied heuristic evaluation and eye-tracking to identify usability pain points.</p>
           </article>
         </div>
       </div>
@@ -183,37 +148,37 @@
         <div>
           <h2 class="section-title">Experience</h2>
           <article class="card job">
-            <h3>Brigham Young University</h3>
-            <p class="role">Professor</p>
-            <p class="timeline">2004 – Present</p>
+            <h3>BYU Human-Centered Computing Lab</h3>
+            <p class="role">Research Assistant</p>
+            <p class="timeline">2024 – Present</p>
+            <p>Assisting graduate researchers in studying the usability of secure communication systems. Designing user studies and visualizing qualitative findings.</p>
           </article>
           <article class="card job">
-            <h3>University of Oregon</h3>
-            <p class="role">Assistant Professor</p>
-            <p class="timeline">1997 – 2004</p>
+            <h3>BYU IT Department</h3>
+            <p class="role">Web Developer Intern</p>
+            <p class="timeline">2023 – 2024</p>
+            <p>Developed internal dashboards and interactive components in React. Improved user satisfaction metrics by modernizing internal web apps.</p>
           </article>
         </div>
         <div>
           <h2 class="section-title">Education</h2>
           <article class="card">
-            <h3>University of Southern California</h3>
-            <p class="muted">Ph.D. in Computer Science · 1997</p>
-          </article>
-          <article class="card">
-            <h3>Stanford University</h3>
-            <p class="muted">B.S. in Electrical Engineering · 1990</p>
+            <h3>Brigham Young University</h3>
+            <p class="muted">B.S. in Computer Science, HCI Emphasis · Expected 2026</p>
           </article>
         </div>
       </div>
     </section>
     <section id="contact">
       <div class="container">
-        <p>You can contact me at zappala [at] cs.byu.edu or visit my <a href="https://zappala.byu.edu/">home page</a> for more info.</p>
+        <p>Feel free to reach out at myname [at] byu.edu or connect with me on <a href="https://linkedin.com">LinkedIn</a>.</p>
       </div>
     </section>
   </main>
   <footer>
     <div class="container">
-      <div class="social">
-        <a aria-label="Twitter/X" href="https://twitter.com/username" target="_blank" rel="noreferrer noopener" title="Twitter/X">
-          <svg viewBox="0 0 310 310" aria-hidden="true"><path d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73 c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783 c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598 C101.163,99
+      <p class="muted" style="text-align:center">© 2025 BYU Computer Science Student. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
