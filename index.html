@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Resume and Portfolio</title>
+    <title>Daniel Zappala Demo of a Portfolio</title>
     <style>
-        /* Inter Font from Goole Fonts */
+        /* Inter Font from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
         /* VARIABLES */
         :root {
-            --accent-color: #47ebeb;
-            --background-color: #2a2a31;
-            --text-color: #fff;
-            --text-color-muted: #b9b9b9;
+            --accent-color: #980404;
+            --background-color: #fff;
+            --text-color: #2a2a31;
+            --text-color-muted: #2a2a31;
+            --link-color: #373db4;
 
             /* spacing */
             --space-xs: 4px;
@@ -57,6 +58,7 @@
             padding: 20px 0;
         }
 
+
         nav {
 
             margin-left: auto;
@@ -66,6 +68,11 @@
             font-size: var(--font-size-lg);
             font-weight: 700;
 
+        }
+
+        .logo a:link,
+        .logo a:visited {
+            text-decoration:none;
         }
 
         nav ul {
@@ -79,14 +86,15 @@
         nav ul li a:visited {
             color: var(--text-color);
             opacity: 0.7;
+            text-decoration: none;
         }
 
         /* TYPOGRAPHY */
 
         a:link,
         a:visited {
-            color: var(--accent-color);
-            text-decoration: none;
+            color: var(--link-color);
+            text-decoration: underline;
         }
 
         h1 {
@@ -96,14 +104,15 @@
 
         h2 {
             font-size: var(--font-size-xl);
-            color: var(--accent-color);
+            color: var(--text-color);
             margin-bottom: var(--space-lg);
-            font-weight: 200;
+            font-weight: 400;
             margin-top: var(--space-xl);
         }
 
         h3 {
             font-size: var(--font-size-lg);
+            color: var(--accent-color);
             margin-bottom: var(--space-sm);
             font-weight: 400;
         }
@@ -141,7 +150,6 @@
         }
 
         .card {
-            background: linear-gradient(90deg, #35353f 0%, #3d3b3e 50%, #3d3b3e 50%);
             border-radius: 20px;
             padding: var(--space-xs) var(--space-lg) var(--space-lg);
             border: 0.5px solid #484851;
@@ -150,7 +158,7 @@
 
         .card p {
             margin: var(--space-xs) 0;
-            font-size: var(--font-size-xs);
+            font-size: var(--font-size-sm);
         }
 
         /* SKILLS */
@@ -201,6 +209,18 @@
             font-weight: 200;
             line-height: 1.4;
             color: var(--text-color);
+        }
+
+        /* IMAGES */
+        .flex-container {
+            display: flex;
+            justify-content: center; /* Centers the images horizontally */
+            gap: 10px; /* Adds space between images */
+            padding-top: 10px;
+        }
+        .flex-container img {
+            width: 100%;
+            height: auto; /* Maintains aspect ratio */
         }
 
 
@@ -290,12 +310,12 @@
 
         <header>
             <div class="logo">
-                <a href="/">JM.</a>
+                <a href="/">Daniel Zappala</a>
             </div>
             <nav>
                 <ul>
+                    <li><a href="#projects">Recent Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#portfolio">Recent Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -304,157 +324,90 @@
         <main>
             <div id="about">
                 <h1>
-                    Hi, I'm Josh.
+                    Hi, I'm Daniel.
                 </h1>
                 <p>
-                    UI/UX Designer and Front-End Engineer. Currently, I'm based in the Greater Boston Area, designing
-                    responsive websites and leading the creative process at <a href="#job" target="_blank">WiredFlow</a>
-                    Agency.
+                    Professor of Computer Science at BYU. I lead the <a href="https://uslab.byu.edu/">Usable Security and Privacy Lab</a>.
                 </p>
             </div>
 
-            <section id="skills">
-                <h2>Skills</h2>
+            <section id="projects">
+                <h2>Recent Projects</h2>
                 <div class="skill card">
                     <h3>
-                        Graphic Design &amp; Creative Direction
+                        Human-centered Threat Modeling
+                    </h3>
+                    
+                    <p>
+                        Human-centered threat modeling is a practice that researchers use to identify security and privacy threats to people, as well as ways to mitigate those threats. 
+                        Our work systematizes the practice of human-centered threat modeling, identifying the core components of a human-centered threat modeling exercise by studying the practices of researchers in the area. 
+                        We have applied this framework to study the security and privacy experiences of Pakistani immigrants to the U.S.
+                    </p>
+                    <div class="flex-container">
+                    <a href="https://ieeexplore.ieee.org/document/11023352"><img src="/images/sok-page1.png"/></a>
+                    <a href="https://ieeexplore.ieee.org/document/11023485"><img src="/images/immigrants-page1.png"/></a>
+                    </div>
+                </div>
+
+                <div class="skill card">
+                    <h3>
+                        Motivation to use secure email
                     </h3>
                     <p>
-                        &bull; Building Responsive UI/UX Design for Web and Mobile. Creating Brand Strategy and Design
-                        Systems
-                        <br>
-                        &bull; Wireframing User Flows and delivering High-fidelity Prototypes for Developer Hand-off
+                        We conducted an interview study to provide a comprehensive understanding of the mindsets underlying adoption and use of secure email services, such as ProtonMail. Our results uncover that a defining reason for adopting a secure email system is to avoid surveillance from big tech companies. However, regardless of the complexity and accuracy of a person's mental model, our participants rarely send and receive encrypted emails, thus not making full use of the privacy they could obtain. These findings indicate that secure email systems could potentially find greater adoption by appealing to their privacy advantages, but privacy gains will be limited until a critical mass are able to join these systems and easily send encrypted emails to each other.
+                        <a href="https://www.usenix.org/conference/soups2023/presentation/usman">Read the paper</a>.
                     </p>
                 </div>
 
                 <div class="skill card">
                     <h3>
-                        Front-End Development
+                        Automated Certificates for User Authentication
                     </h3>
                     <p>
-                        &bull; Proficient in HTML, CSS &amp; JavaScript with
-                        3yrs experience in React, Node.js & Express.
-                        <br>
-                        &bull; Familiar with User Testing &amp; Conversion Optimization Tools like Optimizely &amp; VWO.
+                       We developed a new system, called Let's Authenticate, which enables people to login to websites using cryptographic methods rather than passwords. Our system combines elements of password managers, FIDO2, and certificates. Let’s Authenticate issues privacy-preserving certificates to users, automatically manages their credentials, and eliminates trust in third parties. We provide a detailed security and privacy analysis, an overhead analysis, and a systematic comparison of the system to a variety of alternatives using a well-known framework. We discuss how Let’s Authenticate compares to other systems, lessons learned from our design, and issues related to centralized management of authentication data.
+                     <a href="https://www.ndss-symposium.org/ndss-paper/auto-draft-251/">Read the paper</a>
                     </p>
                 </div>
 
-                <div class="skill card">
-                    <h3>
-                        Back-End Development
-                    </h3>
-                    <p>
-                        &bull; Familiar with Git Workflow, Docker and CI/CD
-                        <br>
-                        &bull; Experience with MongoDB, MySQL, PostgreSQL databse setup and management
-                        <br>
-                        &bull; Building RESTful APIs and GraphQL based query systems
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Tools
-                    </h3>
-                    <p>
-                        &bull; Familiar with Figma &amp; the Adobe Creative Suite
-                        <br>
-                        &bull; Integration of CRM &amp; Analytics Plarforms like HubSpot, Klaviyo , Mailchimp , Google
-                        Analytics &amp; Hotjar.
-                        <br>
-                        &bull; Project Management through Trello , Asana , Slack ,
-                        Jira &amp; Confluence.
-                    </p>
-                </div>
             </section>
 
             <section id="experience">
                 <h2>Experience</h2>
                 <div class="job card">
-                    <h3 id="job">WiredFlow Agency</h3>
-                    <p class="role">Lead UI/UX Designer</p>
-                    <p class="timeline">2019 - Present</p>
+                    <h3 id="job">Brigham Young University</h3>
+                    <p class="role">Professor</p>
+                    <p class="timeline">2004 - Present</p>
                     <p class="responsibilities">
-                        At WiredFlow, I lead the design process for all projects. I work closely with the development
-                        team
-                        to
-                        ensure that the vision is carried through to the final product. I also work with clients to
-                        ensure
-                        that their needs are met and that they are happy with the final product.
                     </p>
                 </div>
                 <div class="job card">
-                    <h3>Design Co.</h3>
-                    <p class="role">UI/UX Designer</p>
+                    <h3>University of Oregon</h3>
+                    <p class="role">Assistant Professor</p>
                     <p class="timeline">
-                        2017 - 2019
+                        1997 -- 2004
                     </p>
                     <p class="responsibilities">
-                        At Design Co., I worked on a variety of projects, from small websites to large web applications.
-                        I
-                        was
-                        responsible for the design of the user interface and user experience, as well as working with
-                        the
-                        development team to ensure that the design was implemented correctly.
-                    </p>
+                      </p>
                 </div>
                 <div class="education">
                     <h2>Education</h2>
 
                     <div class="school card">
-                        <h3>University of Boston</h3>
-                        <p class="degree">Bachelor of Science in Computer Science</p>
-                        <p class="timeline">2013 - 2017</p>
+                        <h3>University of Southern California</h3>
+                        <p class="degree">Ph.D. in Computer Science</p>
+                        <p class="timeline">1997</p>
+                    </div>
+                    <div class="school card">
+                        <h3>Stanford University</h3>
+                        <p class="degree">B.S. in Electrical Engineering</p>
+                        <p class="timeline">1990</p>
                     </div>
 
 
-                </div>
-            </section>
-            <section id="portfolio">
-                <h2>Recent Work</h2>
-                <div class="project card">
-                    <div class="thumbnail"><a href="/link-to-project" target="_blank"><img
-                                src="https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Project 1"></a></div>
-                    <h3>Project 1</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc sit amet libero scelerisque
-                        aliquet. Nullam nec nisl ac nisi ultricies posuere.<br>
-                        <a href="/link-to-project" target="_blank">Link to Project</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail"><a href="/link-to-project" target="_blank"><img
-                                src="https://plus.unsplash.com/premium_photo-1685086785077-ff65bf749544?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Project 2"></a></div>
-                    <h3>Project 2</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc sit amet libero scelerisque
-                        aliquet. Nullam nec nisl ac nisi ultricies posuere.
-                        <br>
-                        <a href="/link-to-project" target="_blank">Link to Project</a>
-                    </p>
-                </div>
-                <div class="project card">
-                    <div class="thumbnail">
-                        <a href="/link-to-project" target="_blank"><img
-                                src="https://plus.unsplash.com/premium_photo-1685086785333-976367da9210?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Project 3"></a>
-                    </div>
-                    <h3>Project 3</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc sit amet libero scelerisque
-                        aliquet. Nullam nec nisl ac nisi ultricies posuere.<br>
-                        <a href="/link-to-project" target="_blank">Link to Project</a>
-                    </p>
                 </div>
             </section>
             <section id="contact">
-                <h2>Get in Touch</h2>
-                <p>
-                    If you have a project that you'd like to discuss, please get in touch with me at <a
-                        href="mailto:josh.m@emailme.org">josh.m@emailme.org</a>.
-                </p>
+                <p>You can contact me at zappala [at] cs.byu.edu or visit my <a href="https://zappala.byu.edu/">home page</a> for more info.</p>
             </section>
 
 
@@ -549,11 +502,7 @@
                 </a>
             </div>
             <p>
-                &copy; 2024 Josh Miles. All rights reserved.
-            </p>
-            <p>
-                <a href="https://github.com/ayushsaranGithuB/one-page-portfolios/tree/main">Get this Free! One-Page
-                    Portfolio Template</a>
+                &copy; 2025 Daniel Zappala. All rights reserved.
             </p>
         </footer>
     </div>
